@@ -1,3 +1,144 @@
-* {
+body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.app-headline {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 700;
+}
+.create-note-headline,
+.archive-note-headline {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+.note-container {
+  padding: 2rem;
+}
+.note-headline {
+  font-size: 2rem;
+  text-align: left;
+  margin: 1.5rem 0;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+.note-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.note-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.note-input-title {
+  width: 30rem;
+  height: 1.5rem;
+  text-align: center;
+}
+
+.note-input-body {
+  width: 30rem;
+  height: 10rem;
+  text-align: center;
+}
+.note-submit-button {
+  width: 30rem;
+  height: 2rem;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: white;
+}
+.note-submit-button:hover {
+  cursor: pointer;
+  background-color: #272727;
+}
+nav.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+nav.navigation a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+}
+nav.navigation a:hover {
+  font-weight: 600;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 0.8rem;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: -1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 23rem;
+  height: 30rem;
+  max-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 1rem;
+  gap: 10px;
+}
+.card h3 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.card p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.card-button {
+  display: flex;
+  gap: 10px;
+}
+.card button {
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.card button:hover {
+  cursor: pointer;
+  background-color: #272727;
+}
+
+button.archive-button,
+button.unarchive-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #fbff27;
+  color: white;
+  padding: 0.5rem 1rem;
+  color: black;
+}
+button.archive-button:hover,
+button.unarchive-button:hover {
+  cursor: pointer;
+  background-color: #a9b824;
 }

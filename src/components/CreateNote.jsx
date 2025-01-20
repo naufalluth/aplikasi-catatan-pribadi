@@ -9,12 +9,13 @@ class CreateNote extends React.Component {
             title: "",
             body: "",
             archive: false,
-            createdAt: new Date().toLocaleString()
+            createdAt: this.getFullDate()
         };
 
         this.onTitleChangeHandler = this.onTitleChangeHandler.bind(this);
         this.onBodyChangeHandler = this.onBodyChangeHandler.bind(this);
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
+        this.getFullDate = this.getFullDate.bind(this);
     }
 
     onTitleChangeHandler(event) {
@@ -41,23 +42,28 @@ class CreateNote extends React.Component {
             title: "",
             body: "",
             archive: false,
-            createdAt: new Date().toLocaleString()
+            createdAt: this.getFullDate()
         });
-        console.log(this.state);
+    }
+
+    getFullDate() {
+        const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        const date = new Date();
+        return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
     }
 
     render() {
         return (
             <div>
-                <h2>Create Note</h2>
+                <h2 className="create-note-headline">Tulis Catatan Baru</h2>
                 <form className="note-input" onSubmit={this.onSubmitHandler}>
-                    <div className="input-field">
-                        <label htmlFor="title">Title</label>
-                        <input type="text" name="title" id="title" placeholder="Judul Catatan" value={this.state.title} onChange={this.onTitleChangeHandler} />
-                        <label htmlFor="body">Content</label>
-                        <textarea type="text" name="body" id="body" value={this.state.body} onChange={this.onBodyChangeHandler} />
+                    <div className="note-input-field">
+                        <label htmlFor="title" className="note-input-label">Title</label>
+                        <input className="note-input-title" type="text" name="title" id="title" placeholder="Judul Catatan" value={this.state.title} onChange={this.onTitleChangeHandler} />
+                        <label htmlFor="body" className="note-input-label">Content</label>
+                        <textarea className="note-input-body" type="text" name="body" placeholder="Isi Catatan" id="body" value={this.state.body} onChange={this.onBodyChangeHandler} />
                     </div>
-                    <button type="submit">Submit</button>
+                    <button className="note-submit-button" type="submit">Submit</button>
                 </form>
             </div>
         );

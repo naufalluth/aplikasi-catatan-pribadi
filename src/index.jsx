@@ -1,10 +1,16 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import NoteApp from "./NoteApp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NoteApp from "./pages/NoteApp";
 
+import './styles/reset.css';
 import './styles/style.css';
 
-
-
 const root = createRoot(document.getElementById("root"));
-root.render(<NoteApp />);
+root.render(
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<NoteApp />} />
+        </Routes>
+    </BrowserRouter>
+);
